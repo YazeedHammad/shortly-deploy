@@ -1,5 +1,16 @@
 var db = require('../config');
 var crypto = require('crypto');
+var mongoos = require('mongoos');
+
+var linkSchema = mongoos.Schema({
+  
+  url: String
+  baseUrl: String
+  code: String
+  title: String 
+  visits: Number
+
+});
 
 var Link = db.Model.extend({
   tableName: 'urls',
